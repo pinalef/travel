@@ -28,9 +28,9 @@ body {
 }
 
 #login-form{
-background: url('../img/travel1.gif');
+background: url('../img/travel3.gif');
 background-size: cover;
 background-position: 50% 50%;
 width: 100%;
-height: 100vmax;
+height: 100vh;
 }
