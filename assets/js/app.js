@@ -1,4 +1,6 @@
 // Initialize Firebase
+var usuarioLogueado="";
+
 var config = {
     apiKey: "AIzaSyDGtZ_xGNto5YRyJ0UyjFpvTfZEeoGM3FA",
     authDomain: "travel-a3801.firebaseapp.com",
@@ -25,30 +27,58 @@ ref.on('value',function(ss){
 $(document).ready(function(){
 	$("#btn-login").click(function(){
 		
-		//FUNCION LOGIN VERSION 3
+		//Función ingresar usuario y contraseña
 		var usuarios = db.ref('usuarios');
 		usuarios.on('value',function(ss){
 			var usuario = ss.val();
-			// Suiche que me indica si encontre el correo y la clave en caso de encontrarlo cambia valor de 0 a 1
+		// Suiche que me indica si encontre el correo y la clave en caso de encontrarlo cambia valor de 0 a 1
 			var logeado = 0;
 			usr = Object.keys(usuario);
             for(i=0; i<usr.length; i++){
             	if(usuario[usr[i]].correo == $("#email").val() && usuario[usr[i]].clave == $("#password").val())
             	{
+                  usuarioLogueado=usr[i];
                   logeado=1
             	}	
             }
             if(logeado == 1){
-            	alert("existe el usuario")
-            }else
+              document.location.replace('profile.html')
+            }else 
+              {
                 alert("Ese usuario no existe o la contraseña esta incorrecta")
-			
-		})
-        
-	})
-})
+            }
+	    })
+    })
 
+	// Rescatar inormación del formulario crear perfil
+	$('#btn-sign-up').click(function(){
+ // haciendo referencia a el campo usuarios de la base de datos
+	  var usuarios = db.ref('usuarios');
+     
+      var nick = $('#nick').val();
+      var nombre = $('#nombre').val();
+      var email = $('#correo').val();
+      var nacionalidad = $('#nacionalidad').val();
+      var clave = $('#clave').val();
+  //var password2 = $('#password2').val();
+  // Creo un objeto para almacenar los datos de un usuario
+      var usuario = new Object();
+      usuario.nombre=nombre;
+      usuario.correo = email;
+      usuario.nacionalidad= nacionalidad;
+      usuario.clave= clave;
+//llamo al campo referencia de usuarios de la base de datos que es nick 
+// guardo con set el objeto usuario con todos los datos de los usuarios
+      usuarios.child(nick).set(usuario);
+
+      document.location.replace('profile.html')
+
+    })
+})    
+
+//Llamanso al modal de registro de usuario
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+

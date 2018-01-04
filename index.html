@@ -71,7 +71,7 @@
 			<div class="section"></div>
 	
 			<div class="container">
-			<div class="z-depth-1 grey lighten-4 row s3 pull-s8" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+			<!--<div class="z-depth-1 grey lighten-4 row s3 pull-s8" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">-->
 				<div class="row">
 				<form class="col 12" method="post">
 					<div class='row'>
@@ -81,41 +81,55 @@
 
 							<div class='row'>
 									<div class='input-field col s12'>
+										<input placeholder="Nick de Usuario" class='validate' type='text' name='nick' id='nick' />
+										<label for='nick'>Nick</label>
+									</div>
+								</div>
+
+							<div class='row'>
+									<div class='input-field col s12'>
 										<input placeholder="Nombre Apellido" class='validate' type='text' name='nombre' id='nombre' />
-										<label for='email'>Nombre Apellido</label>
+										<label for='nombre'>Nombre Apellido</label>
 									</div>
 								</div>
 	
 							<div class='row'>
 								<div class='input-field col s12'>
-									<input class='validate' type='email' name='email' id='email' />
+									<input class='validate' type='email' name='correo' id='correo' />
 									<label for='email'>Email</label>
+								</div>
+							</div>
+
+							<div class='row'>
+								<div class='input-field col s12'>
+									<input class='validate' type='text' name='nacionalidad' id='nacionalidad' />
+									<label for='nacionalidad'>Nacionalidad</label>
 								</div>
 							</div>
 	
 							<div class='row'>
 								<div class='input-field col s12'>
-									<input class='validate' type='password' name='password' id='password' />
+									<input class='validate' type='password' name='clave' id='clave' />
 									<label for='password'>Password</label>
 								</div>
 							</div>
 
 							<div class='row'>
 									<div class='input-field col s12'>
-										<input class='validate' type='password' name='password' id='password' />
-										<label for='password'>Password</label>
+										<input class='validate' type='password' name='password2' id='password2' />
+										<label for='password'>Confirmar Password</label>
 									</div>
 								</div>
 	
 							<br />
 							<center>
 								<div class='row'>
-									<button type='submit' name='btn-sign-up' id="btn-sign-up" class='col s12 btn btn-large waves-effect indigo'>Sign Up</button>
+									<button type='button' name='btn-sign-up' id="btn-sign-up" class='col s12 btn btn-large waves-effect indigo'>Enviar</button>
 								</div>
 							</center>
 						</form>
 					</div>
-					</div>
+				
 				</div>
 	</div>
 </section>
@@ -123,7 +137,8 @@
 </div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		
-	<script src="assets/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<!-- assets/js/materialize.min.js -->
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<script src="assets/js/app.js"></script>
 	<script src=""></script>
