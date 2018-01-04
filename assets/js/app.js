@@ -10,54 +10,45 @@ var config = {
 firebase.initializeApp(config);
 var db = firebase.database();
 
-var ref = db.ref('clark');
+/*var ref = db.ref('clark');
 ref.on('value',function(ss){
- var usuario = ss.val()
- //console.log(usuario);
+/ //console.log(usuario);
  document.getElementById('newClave').innerHTML=usuario.clave;
  document.getElementById('newNombre').innerHTML=usuario.nombre;
  document.getElementById('newCorreo').innerHTML=usuario.correo;
 
-});
+});*/
 
   //crearUsuario('clark','Jesus Manrique','manriquej@gmail.com');
   //crearUsuario('gaby','Gabriela Castillo','castillg@gmail.com');
 
-//$(document).ready(function(){
-	//$("#login").click(function(){
-		//alert('Usuario: '+$("#user").val()+" Clave: "+$("#clave").val())
+$(document).ready(function(){
+	$("#btn-login").click(function(){
 		
-	//	var usuario = {
-		//	email: $("#user").val(),
-			//password: $("#clave").val()
-		//}
-
 		//FUNCION LOGIN VERSION 3
+		var usuarios = db.ref('usuarios');
+		usuarios.on('value',function(ss){
+			var usuario = ss.val();
+			// Suiche que me indica si encontre el correo y la clave en caso de encontrarlo cambia valor de 0 a 1
+			var logeado = 0;
+			usr = Object.keys(usuario);
+            for(i=0; i<usr.length; i++){
+            	if(usuario[usr[i]].correo == $("#email").val() && usuario[usr[i]].clave == $("#password").val())
+            	{
+                  logeado=1
+            	}	
+            }
+            if(logeado == 1){
+            	alert("existe el usuario")
+            }else
+                alert("Ese usuario no existe o la contraseña esta incorrecta")
+			
+		})
+        
+	})
+})
 
-	//})
-//})
-
-//clark es un objeto
-//db.ref('clark').on('value', function (snapshot){
-	//documetnt.getElementById('holamundo').innerText = snapshot.val();
-	//console.log(snapshot.val())
-//})
-
-
-
-
-//nombre es una propiedad del  objeto clark
-//db.ref('clark').child('nombre').on('value', function(snapshot){
- //   snapshot.val()	
-//});
-
-
-//funcion para registrar usuario
-//function crearUsuario(login,nombre,correo)
-//{
- // db.ref(login).set({
-  //	clave: '1234',
-  	//nombre: nombre,
-  	//correo: correo
-  //});
-//}
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });

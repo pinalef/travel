@@ -15,7 +15,9 @@
 	<div class="section"></div>
 	<main>
 		<center>
-			<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />
+			<video autoplay loop id="bgvid">
+            <source src="assets/img/travel.mp4" type="video/mp4">
+            </video>
 				
 			<h5 class="indigo-text">Agregue su contraseña</h5>
 			<div class="section"></div>
@@ -48,17 +50,21 @@
 							<br />
 							<center>
 								<div class='row'>
-									<button type='submit' id="btn-login" name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+									<button type='button' id="btn-login" name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
 								</div>
 							</center>
 						</form>
 					</div>
 				</div>
-				<a href="#!">Create account</a>
+				 <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Crear Cuenta</button>
 			</center>
 		</main>
 </section>
-<!-- Sign Up Form -->
+<!-- Agregando Modal para Crear Cuenta de usuario -->
+<div id="modal1" class="modal">
+	<div class="modal-content">
+		
+	
 <section id='sign-up-form'>
 	<div class="container ">				
 			<h5 class="indigo-text">Sign up, </h5>
@@ -113,9 +119,12 @@
 				</div>
 	</div>
 </section>
+</div>	
+</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		
 	<script src="assets/js/materialize.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<script src="assets/js/app.js"></script>
 	<script src=""></script>
 </body>
