@@ -25,6 +25,7 @@ ref.on('value',function(ss){
   //crearUsuario('gaby','Gabriela Castillo','castillg@gmail.com');
 
 $(document).ready(function(){
+
 	$("#btn-login").click(function(){
 		
 		//Función ingresar usuario y contraseña
@@ -75,7 +76,7 @@ $(document).ready(function(){
       document.location.replace('profile.html')
 
     })
-
+ $('#modal1').modal();
   
 })    
 
@@ -103,8 +104,9 @@ function cargaDatos(){
 
     }
 
-//Llamanso al modal de registro de usuario
+/* //Llamanso al modal de registro de usuario
 $(document).ready(function(){
-    $('.modal').modal();
+   
   });
 
+ */
