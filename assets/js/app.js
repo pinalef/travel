@@ -44,7 +44,7 @@ $(document).ready(function(){
             	}	
             }
             if(logeado == 1){
-              document.location.replace('profile.html')
+              document.location.replace('post.html')
             }else 
               {
                 alert("Ese usuario no existe o la contraseña esta incorrecta")
@@ -73,7 +73,7 @@ $(document).ready(function(){
 // guardo con set el objeto usuario con todos los datos de los usuarios
       usuarios.child(nick).set(usuario);
 
-      document.location.replace('profile.html')
+      document.location.replace('post.html')
 
     })
  $('#modal1').modal();

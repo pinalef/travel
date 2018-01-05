@@ -7,7 +7,20 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/materialize.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-  <title>Document</title>
+	<title>Document</title>
+	
+  <!-- CORE CSS-->
+  
+  <link href="assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="assets/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->    
+    <link href="assets/css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="assets/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="assets/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
 	<!-- seccion principal -->
@@ -17,37 +30,21 @@
             <li class="user-details cyan darken-2">
             <div class="row">
                 <div class="col col s4 m4 l4">
-                    <img src="assets/img/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+									<a class="btn-flat dropdown-button waves-effect waves-light  profile-btn" href="#" data-activates="profile-dropdown"><img src="assets/img/avatar.jpg" alt="" class="circle responsive-img valign profile-image"></a> 
                 </div>
                 <div class="col col s8 m8 l8">
                     
-                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><span id="nombre">pamela inalef</span><i class="mdi-navigation-arrow-drop-down right"></i></a><ul id="profile-dropdown" class="dropdown-content">
-                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                        </li>
-                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                        </li>
-                    </ul>
+                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><span id="nombre">pamela inalef</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
                     <p class="user-roal"><span id="nac">chilena</span></p>
                 </div>
             </div>
             </li>
-            <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Bienvenido(a) a Trendy Travel</a>
+            <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Bienvenido(a) a Travel</a>
             </li>
             
             
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
-                   
-                   
-                   
-                    
                     
                     <li class="bold active"><a class="collapsible-header  waves-effect waves-cyan active"><i class="mdi-action-account-circle"></i> Usuario</a>
                         <div class="collapsible-body" style="display: block;">
@@ -78,14 +75,14 @@
 <div></div>
 	<div id="post" class="#ffffff white " >
 		<div id="profile-page-wall-posts"class="row container">
-			<div class="col s12">
+			<div class="col s10 push-s2">
 				<!-- medium -->
 				<div id="profile-page-wall-post" class="card">
 					<div class="container">
 				  <div class="card-profile-title">
 					<div class="row">
 					  <div class="col s1">
-						<img src="assets/img/avatar.jpg" alt="" class="circle responsive-img valign profile-post-uer-image">                        
+					<a href="">	<img src="assets/img/avatar.jpg" alt="" class="circle responsive-img valign profile-post-uer-image" onclick="abrir-profile()"></a>                        
 					  </div>
 					  <div class="col s8">
 						<p class="grey-text text-darken-4 margin">John Doe</p>
@@ -130,7 +127,7 @@
 
 	<div id="post" class="#ffffff white" >
 		<div id="profile-page-wall-posts"class="row">
-			<div class="col s12">
+			<div class="col s10 push-s2">
 				<!-- medium -->
 				<div id="profile-page-wall-post" class="card">
 					<div class="container">
@@ -139,13 +136,17 @@
 					  <div class="col s1">
 						<img src="assets/img/raymi.jpg" alt="" class="circle responsive-img valign profile-post-uer-image">                        
 					  </div>
-					  <div class="col s10">
+					  <div class="col s8">
 						<p class="grey-text text-darken-4 margin">Reymi</p>
 						<span class="grey-text text-darken-1 ultra-small"> 26 Enero 2018</span>
+						</div>
+						<div class="col s2 right-align ">
+							<a href="" class="light-blue-text text-darken-1 valign-wrapper">+ Seguir</a>
+						</div>
+						<div class="col s1 right-align">
+							<a href="">	<i class="fa fa-ellipsis-v black-text valign-wrapper" aria-hidden="true"></i></a>
 					  </div>
-					  <div class="col s1 right-align">
-						<i class="mdi-navigation-expand-more"></i>
-					  </div>
+		
 					</div>
 					<div class="row">
 					  <div class="col s12">
