@@ -45,9 +45,12 @@ $(document).ready(function(){
             }
             if(logeado == 1){
               document.location.replace('post.html')
+              Materialize.toast('Inicio de sesion exitoso', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
+        
             }else 
               {
-                alert("Ese usuario no existe o la contraseña esta incorrecta")
+                Materialize.toast('"Ese usuario no existe o la contraseña esta incorrecta"', 3000, 'rounded');
+                
             }
 	    })
     })
