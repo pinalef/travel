@@ -37,7 +37,8 @@ $(document).ready(function(){
             for(i=0; i<usr.length; i++){
             	if(usuario[usr[i]].correo == $("#email").val() && usuario[usr[i]].clave == $("#password").val())
             	{
-                  usuarioLogueado=usr[i];
+                  //VARIABLE DE SESION PARA GUADRA EL NICK
+                  sessionStorage['usuarioLogueado'] = usr[i];
                   logeado=1
             	}	
             }
@@ -74,11 +75,37 @@ $(document).ready(function(){
       document.location.replace('profile.html')
 
     })
+
+  
 })    
+
+function cargaDatos(){
+       //console.log("Usuario: "+sessionStorage['usuarioLogueado']) 
+
+        var usuarios = db.ref('usuarios');
+        usuarios.on('value',function(ss){
+          var usuario = ss.val();
+          var indice=0;
+          usr = Object.keys(usuario);
+                for(i=0; i<usr.length; i++){
+                  if(usr[i] == sessionStorage['usuarioLogueado'])
+                  {
+                      indice = i;
+                  } 
+                }
+
+                //console.log(usuario[usr[indice]].correo)
+                $('#nombre').text(usuario[usr[indice]].nombre);
+                 $('#nac').text(usuario[usr[indice]].nacionalidad);
+
+                
+          })
+
+    }
 
 //Llamanso al modal de registro de usuario
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
+   // $('.modal').modal();
   });
 
